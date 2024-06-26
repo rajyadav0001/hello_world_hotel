@@ -19,6 +19,15 @@ app.post('/person', async (req,res)=>{
          res.status(500).send({Error : "Internal server error"});
      }
 })
+app.get('/person', async (req,res)=>{
+    try{
+        const data = await Person.find();
+        res.status(200).send(data);
+    }catch(err){
+        console.log(err);
+        res.status(500).send({Error : "Internal server error"});
+    }
+})
 app.listen(port,()=>{
     console.log(`Server is running on port ${port}`);
     // ConnectionToMongoDB();
