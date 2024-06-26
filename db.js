@@ -9,8 +9,9 @@ const ConnectionToMongoDB = async () => {
     });
     console.log("MongoDB Connected Successfully");
   } catch (error) {
-    console.log("MongoDB Connection Failed");
+    onsole.error("MongoDB Connection Failed", error);
   }
 };
 
+ConnectionToMongoDB();
 module.exports = ConnectionToMongoDB;
