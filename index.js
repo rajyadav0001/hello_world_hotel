@@ -1,16 +1,15 @@
 const express = require('express');
 const ConnectionToMongoDB = require('./db');
 const bodyParser = require('body-parser');
-const MenuItem = require('./models/Menu');
 const personRoutes = require('./routes/personRoutes');
 const menuItemRoutes = require('./routes/menuItemRoutes')
-
+require('dotenv').config();
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 app.use(bodyParser.json());
 
-
+ 
 //Defalut route for the server
 app.get('/', (req,res)=>{
     res.send("Welcome to My Hotel !, How can i help you?");
