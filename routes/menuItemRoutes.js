@@ -38,5 +38,30 @@ router.get('/:menutaste', async (req, res)=>{
         res.status(500).send({Error : "Internal server error"});
      }
 })
+//Update the menu on the basis of the id
+router.put('/:id', async(req, res)=>{
+     try {
+        const UpdateMenu = await MenuItem.findByIdAndUpdate(req.params.id, req.body);
+        if(!UpdateMenu){
+            res.status(404).send({Error:"Menu not found"});
+        }
+        res.status(200).send({message: "Menu updated successfully"})
+     } catch (error) {
+        console.log(error);
+        res.status(500).send({Error:"Internal Server Error"})
+     }
+})
+router.delete('/:id', async(req, res)=>{
+    try {
+       const deleteMenu = await MenuItem.findByIdAndDelete(req.params.id);
+       if(!deleteMenu){
+           res.status(404).send({Error:"Menu not found"});
+       }
+       res.status(200).send({message: "Menu deleted successfully"})
+    } catch (error) {
+       console.log(error);
+       res.status(500).send({Error:"Internal Server Error"})
+    }
+})
 module.exports = router;
 
