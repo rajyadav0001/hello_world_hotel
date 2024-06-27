@@ -25,6 +25,7 @@ router.get("/", async (req, res) => {
   }
 });
 
+//get the person on the basis of the workType
 router.get("/:workType", async (req, res) => {
   try {
     const workType = req.params.workType;
