@@ -8,6 +8,9 @@ const port = 5000;
 
 app.use(bodyParser.json());
 
+app.get('/', (req,res)=>{
+    res.send("Welcome to My Hotel !, How can i help you?");
+})
 
 app.post('/person', async (req,res)=>{
      try{
