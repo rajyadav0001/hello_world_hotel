@@ -1,5 +1,5 @@
 const express = require('express');
-const PersonModel = require('../models/Person.js');
+const PersonModel = require('../models/Person');
 const router = express.Router();
 
 //create a new person with the specified name and details

@@ -1,8 +1,9 @@
 const express = require('express');
 const ConnectionToMongoDB = require('./db');
 const bodyParser = require('body-parser');
-const personRoutes = require('./routes/personRoutes');
-const menuItemRoutes = require('./routes/menuItemRoutes')
+// const personRoutes = require('../routes/personRoutes');
+const personRoutes = require('./src/routes/personRoutes');
+const menuItemRoutes = require('./src/routes/menuItemRoutes')
 require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 5000;
